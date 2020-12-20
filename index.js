@@ -114,6 +114,8 @@ function draw1(){
     var ctx=c.getContext("2d")
     ctx.clearRect(0,0,240,480);
 
+    //Enter Your Code Here for Algo1
+
 
     merge();
     
@@ -126,6 +128,8 @@ function draw2(){
     var ctx=c.getContext("2d")
     ctx.clearRect(0,0,240,480);
 
+    //Enter Your Code Here for Algo1
+
 
     merge();
     
@@ -137,6 +141,9 @@ function draw3(){
     var c = document.getElementById("genCanvas");
     var ctx=c.getContext("2d")
     ctx.clearRect(0,0,240,480);
+
+
+    //Enter Your Code Here for Algo1
 
 
     merge();
