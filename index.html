@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>Generate Pattern</title>
+    </head>
+    <style>
+        .column{
+            float: left;
+            width: 33.33%;
+        }
+
+        .row:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+    </style>
+
+    <body>
+        <div class="row">
+            <div class="column">
+                <div>
+                    <canvas id="genCanvas" style="border: 1px solid black" width=240 height=480></canvas>
+                </div>
+                <div>
+                    <button onclick="draw1()">Algo1</button> 
+                    <button onclick="draw2()">Algo2</button>
+                    <button onclick="draw3()">Algo3</button>
+                </div>
+            </div>
+                <div class = "column">
+                <div>
+                    <canvas id="imgCanvas" style="border:1px solid black" width=240 height=480></canvas>
+                </div>
+                <div>
+                    <input type="file" oninput="upload(event)">
+                </div>
+            </div>
+            <div class="column">
+                <div>
+                    <canvas id="outputCanvas" style="border:1px solid black" width=240 height=480></canvas>
+                </div>
+                <div>
+                    Output
+                </div>
+            </div>
+        </div>
+        <script src="./index.js"></script>
+    </body>
+</html>

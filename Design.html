@@ -1,0 +1,81 @@
+<html>
+
+<body>
+<canvas id="myCanvas" height="240" width="480" style="border:1px solid">
+</canvas>
+<script>
+
+var c= document.getElementById('myCanvas');
+var ctx=c.getContext("2d")
+var circles=[];
+let counter=0;
+alert("The Generative Bubbles By Amith\n Ideal values are given as examples");
+var n = parseInt(window.prompt("Enter the maximum number of bubbles: \n Eg:100"));
+var minRad=parseInt(window.prompt("Enter the minimum radius of the bubble \n Eg:5"));
+var maxRad=parseInt(window.prompt("Enter the maximum radius of the bubble \n Eg:30"));
+while(circles.length<n)
+//for(var i=0;i<1000;i++)
+{
+var circle={
+    x:Math.random()*480,
+    y:Math.random()*240,
+    r:Math.random()*maxRad+minRad
+    };
+
+
+var overlapping=false;
+for(var j=0;j<circles.length;j++)
+{
+var other=circles[j];
+var a=Math.pow((circle.x-other.x),2)
+
+var b=Math.pow((circle.y-other.y),2)
+var d=Math.sqrt(a+b)
+if(d<circle.r+other.r){
+//overlapping
+overlapping=true;
+break;
+counter++
+
+}
+//if(counter>10)
+//break;
+}
+
+if(!overlapping)
+{
+
+circles.push(circle);
+}
+counter++
+if(counter>1000)
+break;
+}
+
+for(var i=0;i<circles.length;i++)
+{
+
+ctx.beginPath();
+ctx.fillStyle = "#ed58ca";
+ctx.globalAlpha = 0.8;
+ctx.arc(circles[i].x,circles[i].y, circles[i].r, 0, 2 * Math.PI);
+
+ctx.fill();
+
+}
+    
+    
+   
+
+
+
+    
+   
+    
+
+
+
+</script>
+</body>
+
+</html>
